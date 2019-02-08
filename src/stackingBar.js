@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReactHighcharts from 'react-highcharts';
-
-import HighchartsMore from 'highcharts-more';
-HighchartsMore(ReactHighcharts.Highcharts);
+import HighchartsReact  from 'highcharts-react-official';
+import Highcharts from 'highcharts';
 
 const configBar =  {
 
@@ -64,7 +62,7 @@ class StackingBar extends Component {
         const StackBarChartData=configBar;
         return (
             <div className="App">
-                <ReactHighcharts config={StackBarChartData} />
+                <HighchartsReact highcharts={Highcharts} options={StackBarChartData} />
             </div>
         );
     }

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReactHighcharts from 'react-highcharts';
-
-import HighchartsMore from 'highcharts-more';
-HighchartsMore(ReactHighcharts.Highcharts);
+import HighchartsReact  from 'highcharts-react-official';
+import Highcharts from 'highcharts';
 
 const configPie = {
     chart: {
@@ -61,7 +59,7 @@ class PieChart extends Component {
         const PieChartData=configPie;
         return (
             <div className="App">
-                <ReactHighcharts config={PieChartData} />
+                <HighchartsReact highcharts={Highcharts} options={PieChartData} />
             </div>
         );
     }

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "highcharts-more": "^0.1.7",
+    "highcharts-react-official": "^2.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-highcharts": "^16.0.2",
