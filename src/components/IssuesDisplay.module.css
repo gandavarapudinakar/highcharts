@@ -1,0 +1,14 @@
+.Wrapper{
+border: 1px solid black;
+padding: 10px;
+}
+.Display{
+    display: inline-block;
+    width: 15%;
+    border: 1px solid black;
+    margin: 10px;
+}
+.Blue{
+    background-color: blue;
+    color: white;
+}
