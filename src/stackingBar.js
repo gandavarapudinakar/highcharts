@@ -10,7 +10,7 @@ const configBar =  {
     },
 
     title: {
-        text: 'Total fruit consumtion, grouped by gender'
+        text: 'Issues By Location'
     },
 
     xAxis: {

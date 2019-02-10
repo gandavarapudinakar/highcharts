@@ -8,7 +8,7 @@ const issueDisplay = (props) => {
         }
         
 
-        return (<div className={color.join(' ')}>
+        return (<div key={key} className={color.join(' ')}>
             <div>{props.display[key]}</div>
             <div>{key}</div>
         </div>)

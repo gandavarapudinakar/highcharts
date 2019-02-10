@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import HighchartsReact  from 'highcharts-react-official';
+import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 
 
 class PieChart extends Component {
     render() {
-        const PieChartData= {
+        const PieChartData = {
             chart: {
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
@@ -19,44 +19,61 @@ class PieChart extends Component {
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
             },
-            label:{
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            credits: false,
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                padding: 3,
+                itemMarginTop: 10,
+                itemMarginBottom: 10,
+                itemStyle: {
+                    lineHeight: '14px'
+                }
+
             },
             plotOptions: {
                 pie: {
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
-                        enabled: false
+                        enabled: true,
+                        format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                        distance: -50,
+                        filter: {
+                            property: 'percentage',
+                            operator: '>',
+                            value: 0
+                        }
                     },
-                    showInLegend: true
+                    showInLegend: true,
+
                 }
             },
+           
             series: [{
                 name: 'Issues',
                 colorByPoint: true,
                 data: [{
                     name: 'critical',
                     y: 50,
-                    color:'red',
-                    selected:true,
-                    sliced:true
+                    color: 'red',
                 }, {
                     name: 'High',
                     y: 20,
-                    color:'yellow'
+                    color: 'yellow'
                 }, {
                     name: 'medium',
                     y: 10,
-                    color:'black'
+                    color: 'black'
                 }, {
                     name: 'low',
                     y: 10,
-                    color:'blue'
+                    color: 'blue'
                 }]
             }]
         }
-              return (
+        return (
             <div className="App">
                 <HighchartsReact highcharts={Highcharts} options={PieChartData} />
             </div>
